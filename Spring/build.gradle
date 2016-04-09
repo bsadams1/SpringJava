@@ -1,7 +1,17 @@
 group 'com.teamtreehouse'
 version '1.0-SNAPSHOT'
 
+buildscript{
+    repositories{
+        mavenCentral()
+    }
+    dependencies{
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE'
+    }
+}
+
 apply plugin: 'java'
+apply plugin: 'spring-boot'
 
 sourceCompatibility = 1.5
 
@@ -10,5 +20,5 @@ repositories {
 }
 
 dependencies {
-    compile 'org.springframework:spring-webmvc:4.2.2.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
