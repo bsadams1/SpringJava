@@ -22,6 +22,10 @@ public class GifRepository {
             new Gif("infinite-andrew", LocalDate.of(2015,8,23), "Marissa Mayer", true)
     );
 
+    public List<Gif> getAllGifs(){
+        return ALL_GIFS;
+    }
+
     public Gif findByName(String name){
         for (Gif gif : ALL_GIFS){
             if(gif.getName().equals(name)){

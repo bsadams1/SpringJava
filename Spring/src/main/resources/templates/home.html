@@ -45,22 +45,10 @@
     </div>
     <div class="gifs container">
         <div class="row">
-            <div class="col s12 l4">
-                <a>
-                    <img th:src="@{/gifs/compiler-bot.gif}" />
-                    <a href="#" class="mark favorite"></a>
-                </a>
-            </div>
-            <div class="col s12 l4">
-                <a>
-                    <img th:src="@{/gifs/compiler-bot.gif}" />
-                    <a href="#" class="mark favorite"></a>
-                </a>
-            </div>
-            <div class="col s12 l4">
-                <a>
-                    <img th:src="@{/gifs/compiler-bot.gif}" />
-                    <a href="#" class="mark favorite"></a>
+            <div th:each ="gif : ${gifs}" class="col s12 14">
+                <a th:href ="@{'/gif/' + ${gif.name}}" >
+                    <img th:src="@{'/gifs/' + ${gif.name} + '.gif'}" />
+                    <a href="#" th:class="(${gif.favorite} ? 'un' : '') + 'mark favorite'"></a>
                 </a>
             </div>
         </div>
